@@ -18,7 +18,9 @@ char	*ft_strchr(char *s, int c)
 	char	*ss;
 
     if (!s)
+	{
         return (NULL);
+	}
 	i = 0;
 	ss = s;
 	while (ss[i])
@@ -81,7 +83,7 @@ int	str_append_str(char **s1, char *s2)
 	return (str_append_mem(s1, s2, ft_strlen(s2)));
 }
 
-
+#include <stdio.h>
 char	*get_next_line(int fd)
 {
 	static char b[BUFFER_SIZE + 1] = "";
@@ -114,4 +116,22 @@ char	*get_next_line(int fd)
     }
     b[i] = '\0';
 	return (ret);
+}
+
+
+int	main (int ac, char *av[])
+{
+	if (ac == 2)
+	{
+		char *str = av[1];
+		int fd = open(str, O_RDONLY);
+		char *line;
+		line = get_next_line(fd);
+		while (line)
+		{
+			printf ("%s", line);
+			line = get_next_line(fd);
+		}
+	}
+	return (0);
 }

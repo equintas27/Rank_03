@@ -79,7 +79,7 @@ void	permutations(char *str, int start, int end)
 		}
 		str[i] = tmp;
 		i++;
-	}	
+	}
 }
 
 int	main(int ac, char *av[])

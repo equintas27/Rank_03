@@ -180,8 +180,8 @@ int	ft_scanf(const char *format, ...)
 	n = 0;
 	c = '0';
 	printf("Digite 42Luanda e clique Enter: ");
-	ft_scanf("%d", &n);
-	printf("O valor inteiro lido é: %d\n", n);
+	ft_scanf("%d %s", &n,  str);
+	printf("O valor inteiro lido é: %d %s\n", n, str);
 	ft_scanf("%c", &c);
 	printf("O valor char lido é: %c\n", c);
 	ft_scanf("%s", str);
