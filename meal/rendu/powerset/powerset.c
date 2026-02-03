@@ -28,19 +28,18 @@ void	print_result(int *saco, int size)
 	printf("\n");
 }
 
-void	find_subsets(int target, int *s, int size, int idx, int current_sum,
-		int *subset, int sub_idx)
+void	find_subsets(int target, int *s, int size, int i, int current_sum,
+		int *subset, int sub_i)
 {
-	if (idx == size)
+	if (i == size)
 	{
 		if (current_sum == target)
-			print_result(subset, sub_idx);
+			print_result(subset, sub_i);
 		return ;
 	}
-	find_subsets(target, s, size, idx + 1, current_sum, subset, sub_idx);
-	subset[sub_idx] = s[idx];
-	find_subsets(target, s, size, idx + 1, current_sum + s[idx], subset, sub_idx
-		+ 1);
+	find_subsets(target, s, size, i + 1, current_sum, subset, sub_i);
+	subset[sub_i] = s[i];
+	find_subsets(target, s, size, i + 1, current_sum + s[i], subset, sub_i + 1);
 }
 
 int	main(int ac, char *av[])
