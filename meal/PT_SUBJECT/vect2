@@ -1,0 +1,61 @@
+Assunto: vect2
+==================================================
+Nome do exercício: vect2
+Ficheiros esperados: vect2.cpp, vect2.hpp
+-------------------------------------------------------------------------------------------
+
+Crie uma classe `vect2` que represente um vector matemático de dimensão 2 contendo valores do tipo `int`.
+
+Deve suportar a adição, subtração e multiplicação por um escalar (de modo a que a expressão `(vect2(2,2) * 2 == vect2(4,4))` seja verdadeira).
+
+O operador `[]` pode ser utilizado para aceder às componentes do vector (índices 0 e 1); não é necessária verificação de limites (*bound checking*).
+
+O seu objeto deve poder ser impresso utilizando o operador `<<`, de modo a que:
+std::cout << v << std::endl;
+produza a mesma saída que:
+std::cout << "{" << v[0] << ", " << v[1] << "}" << std::endl;
+
+Encontrará uma função `main` neste directório que deve funcionar com a sua classe.
+
+#include "vect2. hpp"
+#include <iostream>
+
+int main()
+{
+vect2 v1; // 0, 0
+vect2 v2(1, 2); // 1, 2
+const vect2 v3(v2); // 1, 2
+vect2 v4 = v2; // 1, 2
+
+std::cout << "v1: " << v1 << std::endl; 
+std::cout << "v1: " << "{" << v1[0] << ", " << v1[1] << "}" << std::endl; 
+std::cout << "v2: " << v2 << std::endl; 
+std::cout << "v3: " << v3 << std::endl; 
+std::cout << "v4: " << v4 << std::endl; 
+std::cout << v4++ << std::endl; // 2, 3
+std::cout << ++v4 << std::endl; // 3, 4
+std::cout << v4-- << std::endl; // 2, 3
+std::cout << --v4 << std::endl; // 1, 2
+v2 += v3; // 2, 4
+v1 -= v2; // -2, -4
+v2 = v3 + v3 *2; // 3, 6
+v2 = 3 * v2; // 9, 18
+v2 += v2 += v3; // 20, 40
+v1 *= 42; // -84, -168
+v1 = v1 - v1 +v1; 
+std::cout << "v1: " << v1 << std::endl; 
+std::cout << "v2: " << v2 << std::endl; 
+std::cout << "-v2: " << -v2 << std::endl; 
+std::cout << "v1[1]: " << v1[1] << std::endl; 
+v1[1] = 12; 
+std::cout << "v1[1]: " << v1[1] << std::endl; 
+std::cout << "v3[1]: " << v3[1] << std::endl; 
+std::cout << "v1 == v3: " << (v1 == v3) << std::endl; 
+std::cout << "v1 == v1: " << (v1 == v1) << std::endl; 
+std::cout << "v1 != v3: " << (v1 != v3) << std::endl; 
+std::cout << "v1 != v1: " << (v1 != v1) << std::endl;
+}
+
+==================================================
+Digite 'test' para testar o seu código, 'next' para obter uma nova pergunta ou 'exit' para sair.
+/>
