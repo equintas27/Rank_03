@@ -17,8 +17,18 @@ class vect2
 		~vect2();
 		
 		// Operators
-		vect2
+		int operator[](int index) const;
+		int &operator[](int index);
 		
+		vect2 operator++(int);
+		vect2& operator++();
+		vect2 operator--(int);
+		vect2& operator--();
+		
+		vect2& operator+=(const vect2& obj);
+		vect2& operator-=(const vect2& obj);
+		
+		int &operator-() const;
 }
 
 
